@@ -1,0 +1,6 @@
+- type: log
+  enabled: true
+  paths:
+    - /var/log/fail2ban.log*
+  fields:
+   beats_output: fail2ban
