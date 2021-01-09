@@ -1,17 +1,46 @@
-# Logstash-pipelines
+# Logstash-pipelines (WIP)
 Some logstash pipelines and patterns I'm using
 
 Content
 -----------
 * [Features](#Features)
 * [Usage](#Usage)
+    * [Prepare](#Prepare)
+    * [fail2ban](#fail2ban)
 * [Reference](#Reference)
 * [License](#License)
 
 Usage
 ----------
 
-### fail2ban
+## Prepare
+
+### Filebeat
+
+Put the Filebeat config in your filebeat inputs directory --> `/etc/filebeat/inputs.d/` or add the content of the Filebeat config below `filebeat.inputs:` in your `/etc/filebeat/filebeat.yml`
+
+If you prefere the first option, you need to create the `inputs.d` directory, and tell filebeat to use this:
+
+```yml
+# ============================== Filebeat inputs ===============================
+
+filebeat.config.inputs:
+  enabled: true
+  path: ${path.config}/inputs.d/*.yml
+
+```
+
+### Logstash
+
+Put the Logstash config in the config directory `/etc/logstash/conf.d`,  
+and the grok patterns into the patterns directory `/etc/logstash/patterns.d`  
+
+**Don't forget to restart Filebeat and Logstash after editing configs**  
+
+## fail2ban
+Filebeat: [fail2ban.yml](filebeat/inputs.d/fail2ban.yml)  
+Logstash config: [fail2ban.conf](logstash/conf.d/20-fail2ban.conf)  
+Logstash pattern: [fail2ban.grok](logstash/patterns.d/fail2ban.grok)  
 
 
 Reference
