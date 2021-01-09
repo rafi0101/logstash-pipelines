@@ -7,6 +7,7 @@ Content
 * [Usage](#Usage)
     * [Prepare](#Prepare)
     * [fail2ban](#fail2ban)
+    * [Grafana](#Grafana)
 * [Reference](#Reference)
 * [License](#License)
 
@@ -42,6 +43,10 @@ Filebeat: [fail2ban.yml](filebeat/inputs.d/fail2ban.yml)
 Logstash config: [fail2ban.conf](logstash/conf.d/20-fail2ban.conf)  
 Logstash pattern: [fail2ban.grok](logstash/patterns.d/fail2ban.grok)  
 
+## Grafana
+Filebeat: [grafana.yml](filebeat/inputs.d/grafana.yml)  
+Logstash config: [grafana.conf](logstash/conf.d/40-grafana.conf)  
+Logstash pattern: [grafana.grok](logstash/patterns.d/grafana.grok)  
 
 Reference
 ----------

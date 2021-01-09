@@ -1,0 +1,26 @@
+GRAFANA t=%{TIMESTAMP_ISO8601:[grafana][timestamp]} lvl=%{LOGLEVEL:[log][level]} msg=\"%{DATA:[grafana][msg]}\" logger=%{DATA:[grafana][logger]} %{GREEDYDATA:message}
+
+GRAFANA_RULEID ruleId=%{POSINT:[grafana][alert][ruleId]}
+GRAFANA_ALERTING_RESULT %{GRAFANA_RULEID} newState=%{DATA:[grafana][alert][newState]} prev state=%{GREEDYDATA:[grafana][alert][prevState]}
+GRAFANA_ALERTING_EVAL %{GRAFANA_RULEID} name=\"%{DATA:[grafana][alert][name]}\"( error=\"%{GREEDYDATA:[grafana][alert][error]})? changing state to=%{GREEDYDATA:[grafana][alert][newState]}
+
+GRAFANA_SQLSTORE dbtype=%{DATA:[grafana][sqlstore][dbtype]}
+GRAFANA_PLUGINS id=%{DATA:[grafana][plugins][id]}
+
+GRAFANA_PLUGINS_BACKEND pluginId=%{DATA:[grafana][plugins][backend][pluginId]} err=%{GREEDYDATA:[grafana][plugins][backend][err]}
+
+GRAFANA_HTTP_SERVER address=\[%{DATA:[grafana][http][host]}\]:%{POSINT:[grafana][http][port]} protocol=%{DATA:[grafana][http][protocol]} subUrl=%{DATA:[grafana][http][subUrl]} socket=%{DATA:[grafana][http][socket]}
+
+GRAFANA_USER_ID userId=%{INT:[grafana][user][id]}
+GRAFANA_ORG_ID orgId=%{INT:[grafana][org][id]}
+GRAFANA_USER_NAME uname=%{DATA:[grafana][user][uname]}
+GRAFANA_WEB_PATH path=%{DATA:[grafana][web][path]}
+GRAFANA_REMOTE_ADDR remote_addr=%{IPORHOST:[grafana][error][remote][addr]}
+GRAFANA_REFERER referer=\"%{URI:[grafana][uri]}\"
+
+GRAFANA_DATA_PROXY_LOG %{GRAFANA_USER_ID} %{GRAFANA_ORG_ID} %{GRAFANA_USER_NAME} %{GRAFANA_WEB_PATH} %{GRAFANA_REMOTE_ADDR} %{GRAFANA_REFERER} error=\"%{GREEDYDATA:[grafana][data-proxy-log][error]}\"
+
+GRAFANA_CONTEXT %{GRAFANA_USER_ID} %{GRAFANA_ORG_ID} %{GRAFANA_USER_NAME} method=%{WORD:[grafana][http][method]} %{GRAFANA_WEB_PATH} status=%{POSINT:[grafana][http][status]} %{GRAFANA_REMOTE_ADDR} time_ms=%{INT:[grafana][http][time_ms]} size=%{INT:[grafana][http][size]} %{GRAFANA_REFERER}
+GRAFANA_CONTEXT_ERROR error=\"%{GREEDYDATA:[grafana][context][error]}"
+GRAFANA_CONTEXT_ALL %{GRAFANA_CONTEXT}|%{GRAFANA_CONTEXT_ERROR}
+
