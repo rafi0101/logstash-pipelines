@@ -1,0 +1,3 @@
+RSPAMD %{TIMESTAMP_ISO8601:[rspamd][timestamp]} #%{INT:[rspamd][pid]}\(%{DATA:[rspamd][program]}\) \<%{DATA:[rspamd][message][id]}\>; %{WORD:[rspamd][module]}; %{GREEDYDATA:message}
+
+RSPAMD_MILTER rspamd_milter_process_command: got connection from %{IPORHOST:[rspamd][milter][ip]}:%{POSINT:[rspamd][milter][port]}

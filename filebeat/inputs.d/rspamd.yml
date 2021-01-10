@@ -1,0 +1,6 @@
+- type: log
+  enabled: true
+  paths:
+    - /var/log/rspamd/rspamd.log*
+  fields:
+   beats_output: rspamd

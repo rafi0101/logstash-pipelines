@@ -48,6 +48,11 @@ Filebeat: [grafana.yml](filebeat/inputs.d/grafana.yml)
 Logstash config: [grafana.conf](logstash/conf.d/40-grafana.conf)  
 Logstash pattern: [grafana.grok](logstash/patterns.d/grafana.grok)  
 
+## Rspamd
+Filebeat: [rspamd.yml](filebeat/inputs.d/rspamd.yml)  
+Logstash config: [rspamd.conf](logstash/conf.d/30-rspamd.conf)  
+Logstash pattern: [rspamd.grok](logstash/patterns.d/rspamd.grok)  
+
 Reference
 ----------
 fail2ban:
