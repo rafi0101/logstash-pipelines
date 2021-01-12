@@ -59,6 +59,11 @@ Filebeat: [ufw.yml](filebeat/inputs.d/ufw.yml)
 Logstash config: [ufw.conf](logstash/conf.d/25-ufw.conf)  
 Logstash pattern: [ufw.grok](logstash/patterns.d/ufw.grok)  
 
+## Monit [Website](https://mmonit.com/monit/#download)
+Filebeat: [monit.yml](filebeat/inputs.d/monit.yml)  
+Logstash config: [monit.conf](logstash/conf.d/15-monit.conf)  
+Logstash pattern: [monit.grok](logstash/patterns.d/monit.grok)  
+
 Reference
 ----------
 fail2ban:
