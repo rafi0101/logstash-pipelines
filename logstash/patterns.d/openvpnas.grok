@@ -1,0 +1,1 @@
+OPENVPNAS %{TIMESTAMP_ISO8601:[openvpnas][timestamp]} \[%{DATA:[openvpnas][process]}#%{DATA:[log][level]}\] %{GREEDYDATA:message}

@@ -11,6 +11,7 @@ Content
     * [Rspamd](#rspamd)
     * [UFW](#ufw-uncomplicated-firewall--iptables)
     * [Monit](#monit-website)
+    * [openvpn-as](#openvpn-as)
 * [Reference](#Reference)
 * [License](#License)
 
@@ -65,6 +66,13 @@ Logstash pattern: [ufw.grok](logstash/patterns.d/ufw.grok)
 Filebeat: [monit.yml](filebeat/inputs.d/monit.yml)  
 Logstash config: [monit.conf](logstash/conf.d/15-monit.conf)  
 Logstash pattern: [monit.grok](logstash/patterns.d/monit.grok)  
+
+## openvpn-as
+
+Filebeat: [openvpnas.yml](filebeat/inputs.d/openvpnas.yml)  
+Logstash config: [openvpnas.conf](logstash/conf.d/35-openvpnas.conf)  
+Logstash pattern: [openvpnas.grok](logstash/patterns.d/openvpnas.grok)  
+
 
 Reference
 ----------

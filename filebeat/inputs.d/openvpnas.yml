@@ -1,0 +1,6 @@
+- type: log
+  enabled: true
+  paths:
+    - /var/log/openvpnas.log*
+  fields:
+   beats_output: openvpnas
