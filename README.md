@@ -54,10 +54,18 @@ Filebeat: [rspamd.yml](filebeat/inputs.d/rspamd.yml)
 Logstash config: [rspamd.conf](logstash/conf.d/30-rspamd.conf)  
 Logstash pattern: [rspamd.grok](logstash/patterns.d/rspamd.grok)  
 
+## UFW (uncomplicated firewall) / IPTABLES
+Filebeat: [ufw.yml](filebeat/inputs.d/ufw.yml)  
+Logstash config: [ufw.conf](logstash/conf.d/25-ufw.conf)  
+Logstash pattern: [ufw.grok](logstash/patterns.d/ufw.grok)  
+
 Reference
 ----------
 fail2ban:
 * https://github.com/nxhack/logstash
+
+ufw:
+* https://github.com/splitice/iptables-log-grok/blob/master/iptables.patterns
 
 License
 ----------

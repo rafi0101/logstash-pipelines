@@ -1,0 +1,6 @@
+- type: log
+  enabled: true
+  paths:
+    - /var/log/ufw.log*
+  fields:
+   beats_output: ufw
